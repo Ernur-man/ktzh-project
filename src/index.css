@@ -1,0 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  text-decoration: none;
+  list-style-type: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+}
