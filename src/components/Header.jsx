@@ -1,6 +1,6 @@
 import Logo from '../assets/logo.svg'
-import search from '../assets/search.svg'
 import '../less/header.less'
+import Search from './search'
 export default function Header(){
     return(
         <>
@@ -8,7 +8,7 @@ export default function Header(){
             <div className="container">
                 <img src={Logo} alt="logo" />
                 <aside>
-                    <img src={search} alt="Search" />
+                    <Search/>
                     <h2>KZ</h2>
                 </aside>
             </div>
