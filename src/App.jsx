@@ -1,4 +1,5 @@
 import './App.css'
+import Footer from './components/Footer'
 import Main from './components/Main'
 import Navigator from './components/Navigator'
 import Rules from './components/Rules'
@@ -10,6 +11,7 @@ function App() {
       <Main/>
       <Navigator/>
       <Rules/>
+      <Footer/>
     </>
   )
 }

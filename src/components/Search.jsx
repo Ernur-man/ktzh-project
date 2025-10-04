@@ -1,10 +1,9 @@
 import search from '../assets/search.svg'
 import { useState } from 'react'
 import { useEffect } from 'react'
-
+import '../less/modalSearch.less'
 
 export default function Search(){
-    const [isInput, setIsInput] = useState(null)
     const [value, setValue] = useState('')
     const [filteredList, setFilteredList] = useState([])
     const blenderLinks = [
@@ -34,20 +33,42 @@ export default function Search(){
         const newList = blenderLinks.filter(e =>
             e.title.toLowerCase().includes(value.toLowerCase())
         )
-        console.log(newList)
         setFilteredList(newList)
     },[value])
     return(
-        <>
-            <img src={search} alt="search" onClick={()=>setIsInput('works')}/>
-
-           { 
-            isInput && (
-                <div className='search'>
-                    <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} />
-                </div>
-            )
-            }
-        </>
+        <div className='modalSearch'>
+            <article className="searchBlock">
+                    <aside>
+                            <div className='search'>
+                                <img src={search} alt="search"/>
+                                <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} />
+                            </div>
+                    </aside>
+                    <aside>
+                           {
+                                filteredList.length > 0 && (
+                                <ul>
+                                    {filteredList.map((el,i)=>(
+                                    
+                                        <li  key={i}>
+                                            <a href={el.link}>{el.title}</a>
+                                        </li>
+                                    ))}
+                                </ul>) 
+                            }
+                            {
+                                filteredList.length === 0 && (
+                                <ul>
+                                    {blenderLinks.map((el,i)=>(
+                                    
+                                        <li  key={i}>
+                                            <a href={el.link}>{el.title}</a>
+                                        </li>
+                                    ))}
+                                </ul>) 
+                            }
+                    </aside>
+            </article>
+        </div>
     )
 }

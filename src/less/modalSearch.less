@@ -1,0 +1,39 @@
+.modalSearch{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.523);
+    position: fixed;
+    border-radius: 10px;
+    height: 100svh;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    .searchBlock{
+        width: 100%;
+        padding: 20px;
+        background: white;
+        aside{
+            .search{
+                display: flex;
+                align-items: center;
+                position: relative;
+                img{
+                    position: absolute;
+                    left: 10px;
+                }
+                input{
+                    width: 100%;
+                    border: 1px solid black;
+                    padding: 10px 10px 10px 30px;
+
+                }
+            }
+            ul{
+                li{
+                    padding: 10px 0;
+                    text-transform: lowercase;
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}
