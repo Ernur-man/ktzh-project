@@ -17,14 +17,14 @@ export default function Main(){
                 <Header/>
                 <Swiper modules={[Autoplay]} autoplay={{ delay: 3000 }} loop={true} className='mainSwiper' onSwiper={(swiper) => {
                     swiperRef.current = swiper;
-                    
+
                     }}>
                     <div className="arrows">
                         <nav onClick={()=> swiperRef.current.slidePrev()}>
-                        <img src={arrowLeft}  />
+                        <img src={arrowLeft}  alt='arrowLeft' loading='lazy'/>
                         </nav>
                         <nav onClick={()=> swiperRef.current.slideNext()}>
-                            <img src={arrowRight}  />
+                            <img src={arrowRight} alt='arrowRight' loading='lazy'/>
                         </nav>
                     </div>
                     <SwiperSlide>

@@ -34,13 +34,17 @@ export default function Search(){
             e.title.toLowerCase().includes(value.toLowerCase())
         )
         setFilteredList(newList)
+
+
     },[value])
+
+
     return(
         <div className='modalSearch'>
             <article className="searchBlock">
                     <aside>
                             <div className='search'>
-                                <img src={search} alt="search"/>
+                                <img src={search} alt="search" loading='lazy'/>
                                 <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} />
                             </div>
                     </aside>
@@ -49,23 +53,23 @@ export default function Search(){
                                 filteredList.length > 0 && (
                                 <ul>
                                     {filteredList.map((el,i)=>(
-                                    
+
                                         <li  key={i}>
                                             <a href={el.link}>{el.title}</a>
                                         </li>
                                     ))}
-                                </ul>) 
+                                </ul>)
                             }
                             {
                                 filteredList.length === 0 && (
                                 <ul>
                                     {blenderLinks.map((el,i)=>(
-                                    
+
                                         <li  key={i}>
                                             <a href={el.link}>{el.title}</a>
                                         </li>
                                     ))}
-                                </ul>) 
+                                </ul>)
                             }
                     </aside>
             </article>

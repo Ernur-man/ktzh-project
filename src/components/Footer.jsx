@@ -1,11 +1,12 @@
 import '../less/footer.less'
+import logo from '../assets/logo_ktzh.svg';
 export default function Footer(){
     return(
         <>
             <main className="footer">
                 <div className="container">
                     <aside>
-                        <img src="" alt="" />
+                        <a href="/ktzh-project/"><img src={logo} alt="logo"  loading='lazy'/></a>
                         <nav>
                             <p>Разработчик:  Аширбаев Е.Б.</p>
                             <p>Технический консультант:  Панчук О.А.</p>
